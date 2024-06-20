@@ -1,0 +1,64 @@
+package org.example;
+
+import java.util.ArrayList;
+
+class Main {
+    public static void main(String[] args) {
+
+        public class main {
+            v2();
+        }
+        static void v2 () {
+            System.out.println("===v2===");
+            ArrayList articles = new ArrayList();
+
+            articles.add(new Article());// 0
+            articles.add(new Article());// 1
+            articles.add(new Article());// 2
+            articles.add(new Article());// 3
+
+
+            for (int i = 0; i < articles.size(); i++) {
+                Article article = articles.get(i);
+                System.out.println(article.id);
+            }
+        }
+
+        static void v1 () {
+            System.out.println("===v1===");
+            Article[] articles = new Article[100];
+
+            int articlesize = 0;
+
+            articles[0] = new Article();
+            articlesize++;
+            articles[1] = new Article();
+            articlesize++;
+            articles[2] = new Article();
+            articlesize++;
+            articles[3] = new Article();
+            articlesize++;
+        }
+    }
+}
+
+class Article {
+    static int lastId;
+
+    int id;
+    String regDate;
+
+    static {
+        lastId = 0;
+    }
+
+    Article() {
+        this(lastId + 1, "2024-12-12 12:12:12");// 연쇄 생성자 호출
+        lastId++; //다음 글을 써도 자동증강을 하기 위함
+    }
+
+    Article(int id, String regDate) {
+        this.id = id; //new 인스턴스에 값을 채움
+        this.regDate = regDate;
+    }
+}
