@@ -1,0 +1,26 @@
+package org.example;
+
+class Main {
+    public static void main(String[] args) {
+        사람 a사람1 = new 사람("김철수", 22);
+        사람 a사람2 = new 사람("홍길동", 23);
+
+        System.out.println(a사람1);
+        System.out.println(a사람2);
+    }
+}
+class 사람 extends Object {
+    String name;
+    int age;
+
+    @Override // Override  = 부모객체에게 받아서 쓰는것이 아닌 자기가 알아서 쓰겠다라는 뜻
+              // @ = at sign // @ = 어노테이션
+    public String toString(){// 입력하는 것이 아닌 generate를 사용해서 자동으로 생성
+        return "사람[이름 = " + name + "나이 =" + age + "]";
+    }
+
+    사람(String name, int age){
+        this.name = name;
+        this.age = age;
+    }
+}
