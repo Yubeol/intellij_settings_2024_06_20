@@ -1,0 +1,18 @@
+package org.example;
+
+class Main {
+    public static void main(String[] args) {
+        char c1 = 'a';
+        char c2 = 'a';
+
+        System.out.println(c1 == c2); // true
+
+        // String 은 char의 순서있는 조합이다.
+        String s1 = "하하";
+        String s2 = "하";
+        s2 += "하";
+
+        System.out.println(s1 == s2); // false
+        System.out.println(s1.equals(s2)); // true
+    }
+}
